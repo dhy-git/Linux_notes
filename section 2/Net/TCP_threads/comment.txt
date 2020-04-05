@@ -1,0 +1,8 @@
+TCP_threads 服务器/客户端通讯模型：
+
+    重启服务器后bind报错 ： 提示 Address already in use, 暂停2分钟左右后 服务器才能重启成功
+    （优化4： TCP/IP通讯 允许服务器绑定地址快速重用）
+
+    int b_reuse = 1;
+    setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &b_reuse, sizeof(int));
+    
